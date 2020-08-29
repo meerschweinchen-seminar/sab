@@ -1,0 +1,18 @@
+name: Run audit example
+on: [push]
+
+jobs:
+  auditexample:
+    name: Install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: npm install
+      - run: npm run depTree
+      - run: npm run updates
+        continue-on-error: true
+      - run: npm run audit
+        continue-on-error: true
