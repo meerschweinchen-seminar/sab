@@ -11,5 +11,6 @@ jobs:
         with:
           node-version: '10.x'
       - run: npm install
+      - run: npm install npm -g
       - run: npm run audit
         continue-on-error: true
