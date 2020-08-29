@@ -11,8 +11,5 @@ jobs:
         with:
           node-version: '10.x'
       - run: npm install
-      - run: npm run depTree
-      - run: npm run updates
-        continue-on-error: true
       - run: npm run audit
         continue-on-error: true
